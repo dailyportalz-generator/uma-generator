@@ -11,7 +11,7 @@
       <form @submit.prevent="handleSubmit">
         <div class="question__item">
           <p class="orange-title">Q1.なまえを入れてください（カタカナで）</p>
-          <input type="text" v-model="s0" required size="40">
+          <input type="text" v-model="s0" required size="40" id="s0">
         </div>
         <div class="question__item">
           <p class="orange-title">Q2.ＵＭＡに間違えられたのはいつ？</p>
@@ -80,7 +80,22 @@ export default {
   },
   methods: {
     handleSubmit() {
-      this.$emit('send', {
+
+      if(this.s0 === ""){
+  		  alert('Q1が未入力です');
+      }
+
+      if (!/^[ア-ヴ]+$/.test(this.s0)) {
+        alert('Q1は全角カタカナで入力してください');
+        // TODO: s0へのフォーカス
+        return;
+      }
+
+      if(this.s2 === ""){
+  		  alert('Q1が未入力です');
+      }
+
+      this.$emit('submit', {
         s0: this.s0, // Q1
         q0: this.q0, // Q2
         q1: this.q1, // Q3 ラジオボタン部分
