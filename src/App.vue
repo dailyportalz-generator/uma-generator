@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import Footer from './components/Footer.vue'
 import Questions from './components/Questions'
 import Result from './components/Result'
 import {parse} from 'querystring'
