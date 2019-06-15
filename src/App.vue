@@ -29,6 +29,7 @@ export default {
   methods: {
     submitQuestion(question) {
       this.question = question
+      window.scrollTo(0, 0)
     },
     clear() {
       this.question = null
