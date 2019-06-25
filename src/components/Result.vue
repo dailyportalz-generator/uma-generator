@@ -30,7 +30,7 @@
       <p>{{q7Text}}</p>
       <p></p>
       <div class="result__postscript">
-        <p>このページへの直リンク</p>
+        <p>結果ページへの直リンク</p>
         <p><a :href="directUrl">{{directUrl}}</a></p>
         <p>あなたの分身であるこのＵＭＡ、その噂が一人歩きしてどんどん大ごとになっていく予感に胸を膨らませながら、平穏な日常をお過ごしください。</p>
       </div>
@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     nameSize() {
-      return (this.questions.s0.length / 2) + ((this.questions.q0 + 2) + (this.questions.q1 + 3) * (this.questions.q2 + 3) + (this.questions.q3 + 5) * (this.questions.q4 + 1)) * 31
+      return (Math.round(this.questions.s0.length / 2)) + ((this.questions.q0 + 2) + (this.questions.q1 + 3) * (this.questions.q2 + 3) + (this.questions.q3 + 5) * (this.questions.q4 + 1)) * 31
     },
     name() {
       const suffix = [
@@ -62,20 +62,20 @@ export default {
     },
     features() {
       const features = [
-        "・身長は２ｍ５０ｃｍを越える。",
-        "・目は大きくつり上がっている。",
-        "・脚より手の方が長い。",
-        "・全身が深い毛で覆われている。",
-        "・体毛の色は茶色。",
-        "・頭頂部にとさか状の飾り毛がある。",
-        "・足の指は4本。",
-        "・犬のような声で鳴く。",
-        "・足は速い。",
-        "・動体視力に優れ、低空を飛んでいる鳥を捕まえることがある。",
-        "・強烈な体臭を放っている",
-        "・体のひだを使って短い距離を滑空することがある",
-        "・爪に毒を持つといわれている",
-        "・かんきつ類を好むなど意外とさわやかな一面もある",
+        "身長は２ｍ５０ｃｍを越える。",
+        "目は大きくつり上がっている。",
+        "脚より手の方が長い。",
+        "全身が深い毛で覆われている。",
+        "体毛の色は茶色。",
+        "頭頂部にとさか状の飾り毛がある。",
+        "足の指は4本。",
+        "犬のような声で鳴く。",
+        "足は速い。",
+        "動体視力に優れ、低空を飛んでいる鳥を捕まえることがある。",
+        "強烈な体臭を放っている",
+        "体のひだを使って短い距離を滑空することがある",
+        "爪に毒を持つといわれている",
+        "かんきつ類を好むなど意外とさわやかな一面もある",
       ];
 
       // ビット文字の配列
@@ -187,6 +187,7 @@ export default {
   border-width: 1;
   padding: 10px;
   background-color: rgb(255, 255, 204);
+  word-break: break-all;
 }
 .orange-title {
   color: orange;
